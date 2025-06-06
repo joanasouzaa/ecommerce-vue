@@ -1,35 +1,33 @@
-# 📦 E-commerce Catalog - P2 Unimar
+# 🛍️ E-commerce da Joana
 
-Catálogo de e-commerce desenvolvido para a disciplina de Tecnologias de Front-End, utilizando Vue 3, Vite, Axios e TailwindCSS.
+Catálogo de e-commerce desenvolvido como parte da disciplina de Tecnologias de Front-End na Unimar. O projeto utiliza Vue 3, Vite, Axios e TailwindCSS para criar uma interface moderna e responsiva.
 
-## 📑 Funcionalidades
+## Funcionalidades
 
 - ✅ Listagem de produtos em grid responsivo
-- ✅ Paginação
-- ✅ Visualização de detalhes do produto
-- ✅ Menu de categorias
-- ✅ Busca de produtos em tempo real
-- ✅ Navbar e Footer fixos
+- ✅ Visualização detalhada de cada produto    
+- ✅|❌ Paginação de produtos  
+- ✅|❌ Menu de categorias para filtragem  
+- ❌ Busca de produtos em tempo real  
 - ❌ Carrinho de compras (desafio extra não implementado)
 
-## 🛠️ Tecnologias
+## Tecnologias Utilizadas
 
-- Vue 3
-- Vite
-- Axios
-- TailwindCSS
-- API: [DummyJSON](https://dummyjson.com/docs/products)
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [Axios](https://axios-http.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- API: [DummyJSON](https://dummyjson.com/)
 
-## 📸 Prints das telas
+## Instalação e Uso
 
-### 📱 Catálogo
-![Catálogo](./src/assets/print-catalogo.png)
-
-### 📱 Detalhes do Produto
-![Detalhes](./src/assets/print-detalhes.png)
-
-## ▶️ Como rodar o projeto
-
-1. Clone o repositório:
 ```bash
-git clone https://github.com/samira888w/ecommerce-catalog.git
+# Clone o repositório
+git clone https://github.com/joanasouzaa/ecommerce-vue.git
+cd ecommerce-vue
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
