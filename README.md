@@ -3,12 +3,11 @@ Catálogo de e-commerce desenvolvido como parte da disciplina de Tecnologias de 
 
 ## Funcionalidades
 
-- ✅ Listagem de produtos em grid responsivo
+- ✅ Listagem de produtos em grid
 - ✅ Visualização detalhada de cada produto    
 - ✅|❌ Paginação de produtos  
-- ✅|❌ Menu de categorias para filtragem  
-- ❌ Busca de produtos em tempo real  
-- ❌ Carrinho de compras (desafio extra não implementado)
+- ✅|❌ Menu de categorias funcional 
+- ❌ Busca de produtos 
 
 ## Tecnologias Utilizadas
 
