@@ -46,7 +46,7 @@ Acesse o aplicativo em `http://localhost:5173`.
 
 ![Detalhes do Produto](./assets/detalhes-produto.png)
 
-> **Nota:** Certifique-se de que as imagens estão localizadas no diretório `./assets/`. Caso contrário, ajuste os caminhos ou adicione as imagens correspondentes.
+>
 
 ## 📚 Sobre o Projeto
 
