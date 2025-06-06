@@ -39,16 +39,16 @@ Acesse o aplicativo em `http://localhost:5173`.
 
 ### 📦 Catálogo de Produtos
 
-![Catálogo](.![image](https://github.com/user-attachments/assets/bfd0fc1e-f28b-43fe-8ace-6ba8998196f6)
-)
+![Catálogo]()
+
 
 ### 🔎 Detalhes do Produto
 
-![Detalhes do Produto](./assets/detalhes-produto.png)
+![Detalhes do Produto]()
 
 >
 
 ## 📚 Sobre o Projeto
 
-Este projeto foi desenvolvido com o objetivo de aplicar conceitos de desenvolvimento front-end, utilizando ferramentas modernas para construção de interfaces web. A API DummyJSON foi utilizada para simular dados reais de produtos, proporcionando uma experiência mais próxima de um ambiente de produção.
+Este projeto foi desenvolvido como parte da nota da disciplina de Tecnologias de Desenvolvimento Web. Com o objetivo de aplicar conceitos de desenvolvimento front-end a partir da criação de uma réplica de e-commerce.
 
