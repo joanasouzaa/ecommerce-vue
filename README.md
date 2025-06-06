@@ -31,3 +31,31 @@ npm install
 
 # Inicie o servidor de desenvolvimento
 npm run dev
+
+
+Acesse o aplicativo em `http://localhost:5173`.
+
+## Capturas de Tela
+
+### 📦 Catálogo de Produtos
+
+![Catálogo](.![image](https://github.com/user-attachments/assets/bfd0fc1e-f28b-43fe-8ace-6ba8998196f6)
+)
+
+### 🔎 Detalhes do Produto
+
+![Detalhes do Produto](./assets/detalhes-produto.png)
+
+> **Nota:** Certifique-se de que as imagens estão localizadas no diretório `./assets/`. Caso contrário, ajuste os caminhos ou adicione as imagens correspondentes.
+
+## 📚 Sobre o Projeto
+
+Este projeto foi desenvolvido com o objetivo de aplicar conceitos de desenvolvimento front-end, utilizando ferramentas modernas para construção de interfaces web. A API DummyJSON foi utilizada para simular dados reais de produtos, proporcionando uma experiência mais próxima de um ambiente de produção.
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests com sugestões de melhorias ou correções.
+
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
