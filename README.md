@@ -1,4 +1,4 @@
-# 🛍️ E-commerce da Joana
+# E-commerce da Joana - Tecnologias de Front-End
 
 Catálogo de e-commerce desenvolvido como parte da disciplina de Tecnologias de Front-End na Unimar. O projeto utiliza Vue 3, Vite, Axios e TailwindCSS para criar uma interface moderna e responsiva.
 
