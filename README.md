@@ -34,7 +34,7 @@ npm run dev
 
 
 Acesse o aplicativo em `http://localhost:5173`.
-
+````
 ## Capturas de Tela
 
 ### 📦 Catálogo de Produtos
@@ -52,10 +52,3 @@ Acesse o aplicativo em `http://localhost:5173`.
 
 Este projeto foi desenvolvido com o objetivo de aplicar conceitos de desenvolvimento front-end, utilizando ferramentas modernas para construção de interfaces web. A API DummyJSON foi utilizada para simular dados reais de produtos, proporcionando uma experiência mais próxima de um ambiente de produção.
 
-## 🤝 Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests com sugestões de melhorias ou correções.
-
-## 📄 Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
