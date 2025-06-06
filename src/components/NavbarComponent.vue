@@ -1,18 +1,17 @@
 <template>
-  <nav class="bg-[#89B789] text-white py-4 px-8">
+  <nav class="bg-[#89B789] text-white py-4 px-8 border-b">
     <div class="flex justify-between items-center">
-        <router-link to="/">
-            <h1 class="text-lg font-bold">E-commerce da Joana 💫</h1>
-        </router-link>
+      <router-link to="/">
+        <h1 class="text-lg font-bold">E-commerce da Joana 💫</h1>
+      </router-link>
 
       <div class="items-center justify-center m-auto text-black">
-        <input
-          v-model="search"
-          @input="$emit('search', search)"
-          type="text"
-          placeholder="Buscar produtos..."
-          class="border p-2 rounded w-80"
-        />
+        <input v-model="search" 
+        @input="$emit('search', search)" 
+        type="text" 
+        placeholder="Buscar produtos..."
+        class="border p-2 rounded w-80" 
+          />
       </div>
 
       <ul class="flex gap-6 items-center">
@@ -38,9 +37,33 @@
       </ul>
     </div>
   </nav>
+  <CategoryMenuComponent @selecionar-categoria="selecionarCategoria" />
+
 </template>
 
 <script setup>
-import { ref } from 'vue'
 const search = ref('')
+import { ref } from 'vue'
+import CategoryMenuComponent from './CategoryMenuComponent.vue'
+const selecionarCategoria = (categoria) => {
+}
+
+const searchProducts = async (query) => {
+  searchTerm.value = query.trim()
+
+  if (!query) {
+    isSearching.value = false
+    skip.value = 0
+    fetchProducts()
+    return
+  }
+
+  isSearching.value = true
+
+  const response = await axios.get(`https://dummyjson.com/products/search?q=${query}`)
+  products.value = response.data.products
+  totalPages.value = 1
+  currentPage.value = 1
+}
+
 </script>

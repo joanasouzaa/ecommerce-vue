@@ -1,15 +1,42 @@
 <template>
-  <div class="max-w-lg mx-auto bg-gray-200 p-6 rounded shadow">
-    <img :src="product.thumbnail" :alt="product.title" class="w-full mb-4 rounded">
-    <h2 class="text-2xl font-bold mb-2">{{ product.title }}</h2>
-    <p class="text-gray-800 mb-2">Preço: R$ {{ product.price }}</p>
-    <p class="text-gray-700 mb-4">{{ product.description }}</p>
-    <router-link to="/catalog" class="text-blue-600 hover:underline">← Voltar Para o Catálogo</router-link>
+  <div>
+    <h1 class="text-3xl font-bold text-center mb-8 mt-6 text-blue-700">Detalhes do Produto</h1>
+
+    <div class="max-w-5xl mx-auto bg-gray-200 p-8 rounded-lg shadow flex flex-col md:flex-row gap-8">
+      <div class="bg-gray-100 flex-1 flex items-center justify-center rounded-lg">
+        <img :src="produto.thumbnail" :alt="produto.title" class="w-full max-w-sm rounded">
+      </div>
+
+      <div class="flex-1 flex flex-col justify-between">
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-gray-800">{{ produto.title }}</h2>
+          <p class="text-gray-800 text-lg font-semibold mb-6">Preço: R$ {{ produto.price }}</p>
+          <p class="text-gray-700 text-base leading-relaxed mb-8">{{ produto.description }}</p>
+        </div>
+
+        <router-link
+          to="/catalogo"
+          class="self-start bg-[#89b789] text-white py-3 px-6 rounded-lg shadow hover:bg-blue-700 transition"
+        >
+          ← Voltar ao Catálogo
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-defineProps({
-  product: Object
-})
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const produto = ref({})
+
+const fetchProduto = async () => {
+  const response = await axios.get(`https://dummyjson.com/products/${route.params.id}`)
+  produto.value = response.data
+}
+
+onMounted(fetchProduto)
 </script>

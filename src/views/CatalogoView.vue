@@ -1,12 +1,8 @@
 <template>
   <div class="flex gap-8">
-    <CategoriesComponent
-      :categories="categories"
-      @selectCategory="selectCategory"
-    />
+  
 
     <div class="flex-1">
-      <!-- SearchComponent @search="searchProducts" (to be implemented) -->
       <ProductGridComponent :products="products" />
       <PaginationComponent
         v-if="!isSearching"
@@ -25,7 +21,6 @@ import axios from 'axios'
 
 import ProductGridComponent from '../components/ProductGridComponent.vue'
 import PaginationComponent from '../components/PaginationComponent.vue'
-import CategoriesComponent from '../components/CategoriesComponent.vue'
 
 const products = ref([])
 const categories = ref([])
@@ -39,20 +34,27 @@ const totalPages = ref(1)
 const isSearching = ref(false)
 
 const fetchProducts = async () => {
-  const url = selectedCategory.value ? `https://dummyjson.com/products/category/${selectedCategory.value}?limit=${limit}&skip=${skip.value}` : `https://dummyjson.com/products?limit=${limit}&skip=${skip.value}`
+  const url = selectedCategory.value
+    ? `https://dummyjson.com/products/category/${selectedCategory.value}?limit=${limit}&skip=${skip.value}`
+    : `https://dummyjson.com/products?limit=${limit}&skip=${skip.value}`
 
-  const response = await axios.get(url)
-  products.value = response.data.products
+  try {
+    const response = await axios.get(url)
+    console.log('Dados recebidos:', response.data) // <-- aqui
+    products.value = response.data.products
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error) // <-- aqui
+  }
 
-  // Atualiza paginação apenas fora da busca
   if (!isSearching.value) {
     totalPages.value = Math.ceil(response.data.total / limit)
     currentPage.value = skip.value / limit + 1
   }
 }
 
+
 const fetchCategories = async () => {
-  const response = await axios.get('https://dummyjson.com/products/categories')
+  const response = await axios.get('https://dummyjson.com/products')
   categories.value = response.data.map(c => typeof c === 'string' ? c : c.slug)
 }
 
