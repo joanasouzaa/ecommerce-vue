@@ -18,7 +18,6 @@
       </button>
     </div>
 
-
     <div
       v-if="mostrarTodas"
       class="absolute bg-white shadow-md rounded-lg p-4 z-50 mt-2 w-64 border capitalize "
@@ -40,22 +39,21 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-  import axios from 'axios'
+import axios from 'axios'
 
 const mostrarTodas = ref(false)
 const categorias = ref([])
 const categoriasLimitadas = ref([])
 
 onMounted(async () => {
-  const res = await axios.get('https://dummyjson.com/products/categories')
- 
+  try {
+    const res = await axios.get('https://dummyjson.com/products/categories')
 
-
-  const todasCategorias = [...new Set(dados.products.map(p => p.category))]
-  categorias.value = todasCategorias
-  categoriasLimitadas.value = todasCategorias.slice(0, 5) 
+    
+    categorias.value = res.data 
+    categoriasLimitadas.value = categorias.value.slice(0, 5) // pega as 5 primeiras
+  } catch (error) {
+    console.error('Erro ao buscar categorias:', error)
+  }
 })
 </script>
-
-
-</style>
