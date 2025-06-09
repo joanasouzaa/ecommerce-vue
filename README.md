@@ -33,18 +33,6 @@ npm run dev
 
 Acesse o aplicativo em `http://localhost:5173`.
 ````
-## Capturas de Tela
-
-### 📦 Catálogo de Produtos
-
-![Catálogo]()
-
-
-### 🔎 Detalhes do Produto
-
-![Detalhes do Produto]()
-
->
 
 ## 📚 Sobre o Projeto
 
