@@ -51,6 +51,7 @@ onMounted(async () => {
     const res = await axios.get('https://dummyjson.com/products') 
     console.log(res)
     categorias.value = res.data     
+    alert(categorias)
     categoriasLimitadas.value = categorias.value.slice(0, 5) 
   } catch (error) {
     console.error('Erro ao buscar categorias:', error)
