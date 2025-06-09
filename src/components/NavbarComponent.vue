@@ -10,8 +10,7 @@
         @input="$emit('search', search)" 
         type="text" 
         placeholder="Buscar produtos..."
-        class="border p-2 rounded w-80" 
-          />
+        class="border p-2 rounded w-80" />
       </div>
 
       <ul class="flex gap-6 items-center">
@@ -38,16 +37,22 @@
     </div>
   </nav>
   <CategoryMenuComponent @selecionar-categoria="selecionarCategoria" />
-
 </template>
-
 <script setup>
-const search = ref('')
 import { ref } from 'vue'
 import CategoryMenuComponent from './CategoryMenuComponent.vue'
+import axios from 'axios'
+import { useRouter } from 'vue-router'  
+
+const search = ref('')
+const router = useRouter()  
+
+
 const selecionarCategoria = (categoria) => {
+  router.push(`/categoria/${categoria}`) 
 }
 
+// Função de busca de produtos
 const searchProducts = async (query) => {
   searchTerm.value = query.trim()
 
@@ -65,5 +70,4 @@ const searchProducts = async (query) => {
   totalPages.value = 1
   currentPage.value = 1
 }
-
 </script>
