@@ -40,13 +40,14 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+  import axios from 'axios'
 
 const mostrarTodas = ref(false)
 const categorias = ref([])
 const categoriasLimitadas = ref([])
 
 onMounted(async () => {
-  const res = await fetch('https://dummyjson.com/products')
+  const res = await axios.get('https://dummyjson.com/products')
   const dados = await res.json()
 
 
