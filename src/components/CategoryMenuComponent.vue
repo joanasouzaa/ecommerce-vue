@@ -8,7 +8,7 @@
         ☰ Todas Categorias
       </button>
 
-    /*  <button
+      <button
         v-for="(cat, index) in categoriasLimitadas"
         :key="index"
         class="text-sm font-medium text-gray-700 hover:underline whitespace-nowrap capitalize"
@@ -17,7 +17,7 @@
         {{ cat.replace('-', ' ') }}
       </button>
     </div>
-*/
+
     <div
       v-if="mostrarTodas"
       class="absolute bg-white shadow-md rounded-lg p-4 z-50 mt-2 w-64 border capitalize "
