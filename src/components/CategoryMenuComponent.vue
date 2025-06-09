@@ -47,8 +47,8 @@ const categorias = ref([])
 const categoriasLimitadas = ref([])
 
 onMounted(async () => {
-  const res = await axios.get('https://dummyjson.com/products')
-  const dados = await res.json()
+  const res = await axios.get('https://dummyjson.com/products/categories')
+ 
 
 
   const todasCategorias = [...new Set(dados.products.map(p => p.category))]
@@ -57,12 +57,5 @@ onMounted(async () => {
 })
 </script>
 
-<style>
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+
 </style>
