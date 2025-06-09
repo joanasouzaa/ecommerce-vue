@@ -47,7 +47,7 @@ const categoriasLimitadas = ref([])
 
 onMounted(async () => {
   try {
-    const res = await axios.get('https://dummyjson.com/products/categories')
+    const res = await axios.get('https://dummyjson.com/products/categories[0]')
 
     
     categorias.value = res.data 
