@@ -10,7 +10,7 @@
 
       <button
         v-for="(cat, index) in categoriasLimitadas"
-        :key="cat"
+        :key="index"
         class="text-sm font-medium text-gray-700 hover:underline whitespace-nowrap capitalize"
         @click="$emit('selecionar-categoria', cat)"
       >
@@ -25,8 +25,8 @@
       <h3 class="font-semibold mb-2 text-center">Categorias</h3>
       <ul class="grid grid-cols-2 gap-2 text-sm">
         <li
-          v-for="cat in categorias"
-          :key="cat"
+          v-for="(cat, index) in categorias"
+          :key="index"
           class="cursor-pointer text-center hover:underline hover:bg-[#89B789] hover:rounded-md hover:p-1 hover:text-white"
           @click="$emit('selecionar-categoria', cat); mostrarTodas = false"
         >
@@ -42,16 +42,15 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
 const mostrarTodas = ref(false)
-const categorias = ref([])
-const categoriasLimitadas = ref([])
+const categorias = ref([])          // Lista completa de categorias
+const categoriasLimitadas = ref([])  // Primeiras 5 categorias
 
 onMounted(async () => {
   try {
-    const res = await axios.get('https://dummyjson.com/products/categories[0]')
-
-    
-    categorias.value = res.data 
-    categoriasLimitadas.value = categorias.value.slice(0, 5) // pega as 5 primeiras
+    // Requisição para obter todas as categorias
+    const res = await axios.get('https://dummyjson.com/products/categories') // Corrigido
+    categorias.value = res.data      // Atribui todas as categorias à variável
+    categoriasLimitadas.value = categorias.value.slice(0, 5) // Pega as 5 primeiras categorias
   } catch (error) {
     console.error('Erro ao buscar categorias:', error)
   }
