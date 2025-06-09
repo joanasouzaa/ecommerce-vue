@@ -8,7 +8,7 @@
         ☰ Todas Categorias
       </button>
 
-      <button
+    /*  <button
         v-for="(cat, index) in categoriasLimitadas"
         :key="index"
         class="text-sm font-medium text-gray-700 hover:underline whitespace-nowrap capitalize"
@@ -17,7 +17,7 @@
         {{ cat.replace('-', ' ') }}
       </button>
     </div>
-
+*/
     <div
       v-if="mostrarTodas"
       class="absolute bg-white shadow-md rounded-lg p-4 z-50 mt-2 w-64 border capitalize "
@@ -42,15 +42,15 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
 const mostrarTodas = ref(false)
-const categorias = ref([])          // Lista completa de categorias
-const categoriasLimitadas = ref([])  // Primeiras 5 categorias
+const categorias = ref([])         
+const categoriasLimitadas = ref([]) 
 
 onMounted(async () => {
   try {
-    // Requisição para obter todas as categorias
-    const res = await axios.get('https://dummyjson.com/products/categories') // Corrigido
-    categorias.value = res.data      // Atribui todas as categorias à variável
-    categoriasLimitadas.value = categorias.value.slice(0, 5) // Pega as 5 primeiras categorias
+    
+    const res = await axios.get('https://dummyjson.com/products/categories') 
+    categorias.value = res.data     
+    categoriasLimitadas.value = categorias.value.slice(0, 5) 
   } catch (error) {
     console.error('Erro ao buscar categorias:', error)
   }
