@@ -48,7 +48,8 @@ const categoriasLimitadas = ref([])
 onMounted(async () => {
   try {
     
-    const res = await axios.get('https://dummyjson.com/products/categories') 
+    const res = await axios.get('https://dummyjson.com/products') 
+    console.log(res)
     categorias.value = res.data     
     categoriasLimitadas.value = categorias.value.slice(0, 5) 
   } catch (error) {
